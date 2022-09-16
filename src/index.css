@@ -1,13 +1,96 @@
-body {
+*{
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body{
+  font-family: cursive;
+  max-width: 350px;
+  min-height: 96.5%;
+  max-height: 96.5%;
+  margin: 30px auto;
+  padding: 5px;
+  background-color: rgba(0, 255, 255, 0.33);
+}
+.content{
+  background-color: white;
+  border-radius: 10px;
+  width: 100%;
+  min-height: 50%;
+  max-height: 100%;
+}
+.result{
+  background-color: white;
+  border-radius: 10px;
+  width: 100%;
+  min-height: 50%;
+  z-index: 99999999;
+  display: inline-block;
+  padding: 15rem 70px;
+  justify-content: space-around;
+}
+.result{
+  position: absolute;
+  top: 10px;
+  max-width: 350px;
+  max-height: 96.5%
+}
+.result h2{
+  margin: 20px 10px;
+}
+.result p{
+  position: relative;
+  margin: 38px 50px;
+}
+.question, .option, .button{
+  border: 1px solid rgb(199, 199, 199);
+  border-radius: 10px;
+  margin: 20px;
+  font-size: 13px;
+  padding: 10px 5px;
+}
+.option:hover{
+  background-color: rgba(0, 128, 0, 0.182);
+  border: 1px solid rgba(0, 128, 0, 0.386)
+}
+.button{
+  cursor: pointer;
+  margin: 60px 22px 30px;
+  text-align: center;
+  background-color: green;
+  color: white;
+}
+.button:hover{
+  background-color: rgba(0, 128, 0, 0.834);
+}
+.quest-title{
+  padding: 15px 0 10px 0;
+  display: flex;
+  justify-content: space-around;
+  font-size: 15px;
+  align-items: center;
+  color: green;
+}
+.footer{
+  justify-content: space-around;
+  display: flex;
+  text-align: center;
+}
+.footer p{
+  position: relative;
+  bottom: 10px;
+  font-size: 12px;
+  color: red;
+  cursor: pointer;
+}
+.footer p:hover{
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.341);
+}
+.icon:hover{
+  cursor: pointer;
+  text-shadow: 3px 3px 5px rgba(0, 55, 17, 0.583);
+}
+.hidden-input{
+  position: relative;
+  left: 17rem;
 }
