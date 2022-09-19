@@ -1,7 +1,9 @@
 import { useState } from "react"
+import Footer from "./Footer"
 import Header from "./Header"
+import Result from "./Result"
 
-const Question = ({ questions }) => {
+const Question = ({ questions, name }) => {
 
     const [index, setIndex] = useState(0)
     const [num, setNum] = useState(1)
@@ -19,14 +21,15 @@ const Question = ({ questions }) => {
         else{
             a = 0;
         }
-        // console.log(a)
     }
 
     var goForward = () =>{
+
         // Updating the score in the array
         const arrX = [...score];
         arrX[index] = a
         setScore(arrX)
+
         // Incrementing/Moving to the nex question
         if(index === questions.length - 1){
             setIndex(index)
@@ -52,12 +55,10 @@ const Question = ({ questions }) => {
         for(var i=0; i<questions.length; i++){
             b += score[i];
         }
-            setResult(false)
-            setRes(b)
-    console.log(b);
+        setResult(false)
+        setRes(b)
+        // console.log(b);
     }
-    // console.log(a);
-    // console.log(score);
     
     return(
         <>
@@ -92,13 +93,11 @@ const Question = ({ questions }) => {
                 { questions[index].D }
             </div>
             
+            { !result && <Result res={res} name={name} /> }
             { toggleButton && <div className='button' onClick={goForward}> Next Question</div>}
             { !toggleButton && <div className='button' onClick={onSubmit}> Submit </div>}
-
-            { !result && <div className="result">
-                <h2>Congratulations!!!</h2>
-                <p>You scored {res}</p>
-            </div>}
+            
+            <Footer />
         </>
     )
 }

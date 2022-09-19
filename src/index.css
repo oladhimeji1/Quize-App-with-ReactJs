@@ -25,22 +25,46 @@ body{
   width: 100%;
   min-height: 50%;
   z-index: 99999999;
-  display: inline-block;
-  padding: 15rem 70px;
-  justify-content: space-around;
-}
-.result{
+  padding: 10rem 70px 15rem 70px;
   position: absolute;
   top: 10px;
   max-width: 350px;
   max-height: 96.5%
 }
+.result a{
+  position: absolute;
+  bottom: 10px;
+  left: 8rem;
+  text-align: center;
+  color: red;
+}
 .result h2{
-  margin: 20px 10px;
+  margin: 0 10px;
+  color: green;
+  position: relative;
+  bottom: 2rem;
+}
+.result h1{
+  color: green;
+  position: relative;
+  text-align: center;
+  font-size: 5rem;
+  bottom: 3rem;
+}
+.result img{
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  position: relative;
+  bottom: 2rem;
+  left: 3rem;
 }
 .result p{
+  color: green;
   position: relative;
-  margin: 38px 50px;
+  bottom: 2rem;
+  margin: 10px;
+  text-align: center;
 }
 .question, .option, .button{
   border: 1px solid rgb(199, 199, 199);
@@ -93,4 +117,110 @@ body{
 .hidden-input{
   position: relative;
   left: 17rem;
+}
+.welcome-page{
+  padding: 30% 40px 50% 40px;
+}
+.login-page{
+  padding: 30% 40px 40% 40px;
+}
+.welcome-page h2, .login-page h2{
+  color: green;
+  text-transform: capitalize;
+  text-align: center;
+}
+.welcome-page small{
+  color: green;
+  text-align: center;
+  font-size: 10px;
+  letter-spacing: 2.5px;
+}
+.welcome-page footer{
+  color: green;
+  text-align: center;
+  position: relative;
+  top: 9rem;
+  font-size: 10px;
+  letter-spacing: 2.5px;
+}
+.login-page footer{
+  color: green;
+  text-align: center;
+  position: relative;
+  top: 7rem;
+  font-size: 10px;
+  letter-spacing: 2.5px;
+}
+.welcome-page input{
+  border: 2px solid rgb(199, 199, 199);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  margin: 20% 0 0 0;
+  font-size: 13px;
+  padding: 5px 5px;
+  outline: none;
+}
+.welcome-page input::placeholder,
+.login-page input::placeholder{
+  font-size: 11px;
+  position: relative;
+  bottom: 2px;
+  color: rgb(208, 200, 200);
+}
+.welcome-page img,
+.login-page img{
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  position: relative;
+  left: 30%;
+}
+.welcome-page button{
+  cursor: pointer;
+  padding: 5px;
+  font-size: 12.5px;
+  height: 27px;
+  position: relative;
+  bottom: 1px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border: none;
+  margin-left: 5px;
+  text-align: center;
+  background-color: green;
+  color: white;
+}
+.login-page input{
+  margin: 30px 0 0px 30px;
+  padding: 5px 10px;
+  border: 0;
+  border-bottom: 2px solid green;
+  outline: 0;
+  background-color: rgb(245, 245, 245);
+}
+.login-page button{
+  cursor: pointer;
+  padding: 5px;
+  font-size: 12.5px;
+  height: 27px;
+  width: 60px;
+  position: relative;
+  top: 2rem;
+  left: 6rem;
+  border-radius: 5px;
+  border: none;
+  margin-left: 5px;
+  background-color: green;
+  color: white;
+}
+.login-page i{
+  color: green;
+  position: absolute;
+  left: 20%;
+  top: 10%;
+}
+.login-page i:hover{
+  cursor: pointer;
+  color: rgb(93, 163, 93);
+  text-shadow: 2px 2px 5px black;
 }
