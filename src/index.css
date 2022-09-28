@@ -1,10 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 *{
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 body{
-  font-family: cursive;
+  font-family: 'Roboto', sans-serif;
   max-width: 350px;
   min-height: 96.5%;
   max-height: 96.5%;
