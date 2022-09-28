@@ -1,36 +1,40 @@
 import { useState } from "react"
 import Footer from "./Footer"
 import Header from "./Header"
-import Result from "./Result"
+// import Result from "./Result"
+import { Link, useNavigate } from 'react-router-dom'
 
-const Question = ({ questions, name }) => {
+const Question = ({ questions, id }) => {
 
     const [index, setIndex] = useState(0)
     const [num, setNum] = useState(1)
     const [toggle, setToggle] = useState(true)
     const [toggleButton, setToggleButton] = useState(true)
-    const [result, setResult] = useState(true)
+    // const [result, setResult] = useState(true)
     const [res, setRes] = useState(0)
     const [score, setScore] = useState(Array(questions.length).fill(0));
+    const navigateTo = useNavigate();
 
-    var a;
+    var a = 0;
     var addArr = (e) =>{
         if(e.target.value === questions[index].answer){
-            a = 1;
+
+            // Updating the score in the array
+            const arrX = [...score]; //all the data in the array
+            arrX[index] = 1 //update the index of the question in the array by 1
+            setScore(arrX)
         }
         else{
-            a = 0;
+        // Updating the score in the array
+            const arrX = [...score]; //all the data in the array
+            arrX[index] = 0
+            setScore(arrX)
         }
     }
 
     var goForward = () =>{
 
-        // Updating the score in the array
-        const arrX = [...score];
-        arrX[index] = a
-        setScore(arrX)
-
-        // Incrementing/Moving to the nex question
+        // Incrementing/Moving to the next question
         if(index === questions.length - 1){
             setIndex(index)
             setToggleButton(false)
@@ -55,8 +59,9 @@ const Question = ({ questions, name }) => {
         for(var i=0; i<questions.length; i++){
             b += score[i];
         }
-        setResult(false)
+        // setResult(false)
         setRes(b)
+        navigateTo(`/result/${b}`);
         // console.log(b);
     }
     
@@ -66,7 +71,7 @@ const Question = ({ questions, name }) => {
             className="fa icon fa-arrow-left"></i> : '' } num = {num} />
 
             <hr /> 
-
+            <p>{score} | {questions.length}</p>
             {questions &&  
             <div key={ questions.id } className='question'>
                 { questions[index].title }
@@ -93,7 +98,7 @@ const Question = ({ questions, name }) => {
                 { questions[index].D }
             </div>
             
-            { !result && <Result res={res} name={name} /> }
+           
             { toggleButton && <div className='button' onClick={goForward}> Next Question</div>}
             { !toggleButton && <div className='button' onClick={onSubmit}> Submit </div>}
             

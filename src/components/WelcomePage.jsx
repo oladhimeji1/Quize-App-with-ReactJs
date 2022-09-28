@@ -1,20 +1,28 @@
 import { useState } from "react";
 import mike from '../img/Mike.jpg'
 import { Link, useNavigate } from 'react-router-dom'
-import Question from "./Question";
 
-const WelcomePage = () => {
+const WelcomePage = ({onAdd}) => {
     const [name, setName] = useState('');
     const [date, setDate] = useState('');
+    const [display, setDisplay] = useState(false)
     const navigateTo = useNavigate();
-    const [display] = useState(false)
     
-    const onsubmit = () => {
+    const onsubmit = async () => {
         if(!name){
             alert('Enter your name')
         }else{
-            alert(name)
-            navigateTo('/quize');
+            const data = { name };
+            const respones = await fetch('http://localhost:5000/names', {
+                method: 'POST',
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data)
+            })
+            const res = await respones.json()
+            const id = res.id
+            const namex = res.name
+            onAdd({id, namex})
+            navigateTo(`/quize`);
         }
     }
     
@@ -27,7 +35,6 @@ const WelcomePage = () => {
       });
     return (
         <div className="welcome-page">
-            { display && <Question name={name} /> }
             <img src={mike} alt="" />
             <h2>Oladhimeji Quize App</h2>
             <small>Built with React, NodeJs & MongoDB</small>
