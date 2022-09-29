@@ -4,7 +4,7 @@ import useFetch from "./useFetch";
 
 const Home = ({ id })=>{
    const { data: questions, isLoading, error } = 
-   useFetch('http://localhost:8000/questions');
+   useFetch('https://paper-grizzly-millennium.glitch.me/db.json');
 
 
     return(
