@@ -3,9 +3,7 @@ import Question from "./Question";
 import useFetch from "./useFetch";
 
 const Home = ({ id })=>{
-   const { data: questions, isLoading, error } = 
-   useFetch('https://paper-grizzly-millennium.glitch.me/db.json');
-
+   const { data: questions, isLoading, error } = useFetch('https://paper-grizzly-millennium.glitch.me/db.json');
 
     return(
         <div className="home">
