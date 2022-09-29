@@ -3,7 +3,7 @@ import Question from "./Question";
 import useFetch from "./useFetch";
 
 const Home = async () =>{
-   const { data: questions, isLoading, error } = await useFetch('https://paper-grizzly-millennium.glitch.me/db.json', { mode: 'cors' });
+   const { data: questions, isLoading, error } = await useFetch('https://paper-grizzly-millennium.glitch.me/db.json');
 
     return(
         <div className="home">
