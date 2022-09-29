@@ -2,7 +2,7 @@
 import Question from "./Question";
 import useFetch from "./useFetch";
 
-const Home = async ({ id })=>{
+const Home = async id =>{
    const { data: questions, isLoading, error } = await useFetch('https://paper-grizzly-millennium.glitch.me/db.json', { mode: 'cors' });
 
     return(

@@ -13,7 +13,7 @@ const WelcomePage = ({onAdd}) => {
             alert('Enter your name')
         }else{
             const data = { name };
-            const respones = await fetch('https://paper-grizzly-millennium.glitch.me/record.json',
+            const respones = await fetch('https://paper-grizzly-millennium.glitch.me/record.json', 
                 { mode: 'cors' }, {
                 method: 'POST',
                 headers: { "Content-Type": "application/json" },
