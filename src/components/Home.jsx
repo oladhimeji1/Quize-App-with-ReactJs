@@ -2,8 +2,8 @@
 import Question from "./Question";
 import useFetch from "./useFetch";
 
-const Home = ({ id })=>{
-   const { data: questions, isLoading, error } = useFetch('https://paper-grizzly-millennium.glitch.me/db.json');
+const Home = async ({ id })=>{
+   const { data: questions, isLoading, error } = await useFetch('https://paper-grizzly-millennium.glitch.me/db.json', {mode:'cors'});
 
     return(
         <div className="home">
